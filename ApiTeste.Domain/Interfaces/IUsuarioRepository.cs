@@ -2,7 +2,7 @@
 
 namespace ApiTeste.Domain.Interfaces
 {
-    public interface IUsuarioRepository
+    public interface IUsuarioRepository : IBase<TblUsuario>
     {
         Task<TblUsuario> BuscarUmPorUsuarioESenha(string usuario, string senha);
     }

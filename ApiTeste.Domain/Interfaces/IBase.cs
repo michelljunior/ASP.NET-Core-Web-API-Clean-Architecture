@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApiTeste.Domain.Interfaces
 {
-    internal interface IBase<T> : IRepository<T> where T : class
+    public interface IBase<T> : IRepository<T> where T : class
     {
     }
 }

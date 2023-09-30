@@ -6,6 +6,7 @@ using ApiTeste.Application.DTOs.Request;
 using ApiTeste.Application.Utils;
 using static ApiTeste.Application.Utils.ValidaModelUtils;
 using ApiTeste.Application.DTOs.Enums;
+using ApiTeste.Application.DTOs.Deletar;
 
 namespace ApiTeste.API.Controllers
 {
@@ -49,7 +50,7 @@ namespace ApiTeste.API.Controllers
 
         [HttpDelete]
         [Authorize(Roles = RolesAuthorize.UsuarioRole)]
-        public async Task<IActionResult> Deletar([FromBody] LivroRequest model)
+        public async Task<IActionResult> Deletar([FromBody] DeletarLivroRequest model)
         {
             try
             {
@@ -75,13 +76,13 @@ namespace ApiTeste.API.Controllers
             }
         }
 
-        [HttpGet("{livro}")]
+        [HttpGet("{autor}/{titulo}")]
         [Authorize(Roles = RolesAuthorize.UsuarioRole)]
-        public async Task<IActionResult> BuscarLivro(LivroRequest livro)
+        public async Task<IActionResult> BuscarLivro(string autor, string titulo)
         {
             try
             {
-                return Ok(await _LivrosService.BuscarLivro(livro));
+                return Ok(await _LivrosService.BuscarLivro(autor, titulo));
             }
             catch (Exception ex)
             {

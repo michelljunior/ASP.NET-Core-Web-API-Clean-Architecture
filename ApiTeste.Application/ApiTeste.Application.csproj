@@ -20,7 +20,6 @@
   <ItemGroup>
     <Folder Include="DTOs\Adicionar\" />
     <Folder Include="DTOs\Alterar\" />
-    <Folder Include="DTOs\Deletar\" />
     <Folder Include="Mappings\" />
   </ItemGroup>
 

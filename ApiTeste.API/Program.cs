@@ -27,6 +27,7 @@ builder.Services.AddScoped<SessaoUsuario>();
 builder.Services.AddScoped<IAutenticacaoService, AutenticacaoService>();
 
 builder.Services.AddScoped<ILivrosService, LivrosService>();
+builder.Services.AddScoped<ILivrosRepository, LivrosRepostory>();
 
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 

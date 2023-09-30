@@ -30,7 +30,8 @@ public partial class BancoApiTesteContext : DbContext
     {
         modelBuilder.Entity<TblLivro>(entity =>
         {
-            entity.HasNoKey();
+            modelBuilder.Entity<TblLivro>()
+            .HasKey(l => new { l.Autor, l.Titulo });
 
             entity.Property(e => e.Autor)
                 .HasMaxLength(100)
