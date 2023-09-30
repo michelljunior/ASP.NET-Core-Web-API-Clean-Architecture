@@ -22,6 +22,7 @@ public partial class BancoApiTesteContext : DbContext
 
     public virtual DbSet<TblUsuario> TblUsuarios { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=bancoApiTeste;Integrated Security=True");
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<TblLivro>(entity =>
@@ -120,6 +121,5 @@ public partial class BancoApiTesteContext : DbContext
 
         OnModelCreatingPartial(modelBuilder);
     }
-
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
